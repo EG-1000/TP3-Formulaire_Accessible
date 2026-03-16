@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+/* Importation de polices Google Fonts */
+/* Polices : Playfair Display (titres), DM Sans (texte) */
+/* Exemple : font-family: 'Playfair Display', serif; */
+/* Exemple : font-family: 'DM Sans', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+/**
+ * @author X <X@csfoy.ca>
+ *
+ * TABLE DES MATIERES
+ *
+ * Reset
+ * Variables
+ * Styles de base
+ * Accessibilité
+ * Validations
+ *
+ */
+
+/* ------- Reset ------- */
+
+@import url(normalize.css);
+
+/* ------- Variables ------- */
+:root {
+    /* Couleurs */
+    --couleur-primaire: ?;
+    --couleur-secondaire: ?;
+    --couleur-tertiaire: ?;
+}
+
+/* ------- Styles de base ------- */
+/* Harmoniser le modèle de boîte avec Box-Sizing */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/*** Harmoniser le modèle de boîte avec Box-Sizing ***/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*** Fluidifier les images ***/
+img {
+    max-width: 100%;
+}
+
+/* ------- Accessibilité ------- */
+
+/* Pour cacher visuellement tout en gardant accessible un contenu: screen-reader-only ou visually-hidden */
+.screen-reader-only,
+.visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.screen-reader-only.focusable:active,
+.screen-reader-only.focusable:focus,
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/* ------- Validations ------- */
+.icone {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url('../images/good-warning-error.png');
+    background-size: cover;
+    position: relative;
+    top: 3px;
+}
+.icone--ok {
+    background-position: 0 0;
+}
+.icone--avertissement {
+    background-position: 49px 0;
+}
+.icone--erreur {
+    background-position: 99px 0;
+}
