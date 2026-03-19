@@ -7,7 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap');
 
 /**
- * @author X <X@csfoy.ca>
+ * @author Emile Germain <2356326@csfoy.ca>
  *
  * TABLE DES MATIERES
  *
@@ -26,9 +26,9 @@
 /* ------- Variables ------- */
 :root {
     /* Couleurs */
-    --couleur-primaire: ?;
-    --couleur-secondaire: ?;
-    --couleur-tertiaire: ?;
+    --couleur-primaire: #ecec3e;
+    --couleur-secondaire: #000000;
+    --couleur-tertiaire: #ffffff;
 }
 
 /* ------- Styles de base ------- */
@@ -100,4 +100,26 @@ img {
 }
 .icone--erreur {
     background-position: 99px 0;
+}
+/* formulaire */
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Playfair Display', serif;
+background: linear-gradient(45deg, rgb(34,165,7), rgb(34,56,190), rgb(34,165,7));
+    color: var(--couleur-tertiaire);
+    padding: 20px;
+    border-radius: 8px;
+}
+@media (max-width: 600px) {
+    .formulaire {
+        padding: 15px;
+    }
+    .formulaire button[type="submit"] {
+margin-left: auto;
+        margin-right: -50px;
+        margin-left: 200px;
+        width: 50%;
+    }
 }
