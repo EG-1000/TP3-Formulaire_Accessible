@@ -12,12 +12,12 @@
     <!-- Votre code HTML commence ici -->
     <header>
         <p class="infos-supp">PUBLICATION GRATUITE</p>
-        <h1>Commander une brochure gratuite</h1>
+        <h1 class="section-titre">Commander une <span class="brochure">brochure</span> gratuite</h1>
     </header>
     <a class="screen-reader-only focusable" href="#formulaire"> aller au formulaire </a>
     <form class="formulaire" id="formulaire" action="submit_form.php" method="post">
         <legend class="legende">Informations de la brochure</legend>
-        <fieldset class="format de la brochure">
+        <fieldset class="formatdelabrochure">
             <button type="button" id="brochure" name="brochure" value="format 1"><img src="images/icon-file-print.svg"
                     alt="format 1">Imprimé</button>
             <button type="button" id="brochure" name="brochure" value="format 2"><img src="images/icon-file-pdf.svg"
@@ -26,30 +26,39 @@
                     alt="format 3">ePub</button>
         </fieldset>
 
-        <legend class="legende">Informations personnelles</legend>
+        <legend class="legende">INFORMATIONS DE CONTACT</legend>
         <fieldset class="informations de contact">
-            <label for="prénom">prénom</label>
-            <input type="text" id="prénom" name="prénom" required>
-            <label for="nom">Nom de famille:</label>
-            <input type="text" id="nom" name="nom" required>
+            <div class="nometprenom">
+                <div class="prenom">
+                    <label for="prénom" id="prénom">prénom</label>
+                    <input type="text" id="prénomtext" name="prénom" required>
+                </div>
+                <div class="nom">
+                    <label for="nom">Nom de famille:</label>
+                    <input type="text" id="nom" name="nom" required>
+                </div>
+            </div>
+
             <label for="email">Adresse e-mail: <span class="exemple">(ABC123@gmail.com)</span></label>
             <input type="email" id="email" name="email" required>
             <label for="téléphone">Numéro de téléphone: <span class="exemple">(123-456-7890)</span></label>
             <input type="tel" id="téléphone" name="téléphone" required>
         </fieldset>
 
-        <legend class="legende">Adresse postale</legend>
+        <legend class="legende">INFORMATIONS POSTALES</legend>
         <fieldset class="informations postales">
             <label for="address">Adresse postale: <span class="exemple">(123 Rue Exemple)</span></label>
             <input type="text" id="address" name="address" required>
             <label for="pays">Pays:</label>
             <select name="pays" id="pays" class="selection selection--pays">
+                <option value="">--Sélectionner--</option>
                 <option value="canada">Canada</option>
                 <option value="usa">États-Unis</option>
             </select>
 
             <label for="province ou état">Province ou état:</label>
             <select name="province" class="selection selection--etatprovince">
+                <option value="">--Sélectionner--</option>
                 <optgroup label="Canada">
                     <option value="AB">Alberta</option>
                     <option value="BC">Colombie-Britannique</option>
@@ -90,7 +99,14 @@
             <label for="code postal">Code postal:</label>
             <input type="text" id="code postal" name="code postal" required>
         </fieldset>
-        <button type="submit">Envoyer <img src="images/icon-arrow.svg" width="20" height="20" alt="Envoyer"></button>
+        <div class="consentement">
+            <input type="checkbox" id="consentement" name="consentement" required>
+            <label for="consentement" class="consentement_text">je désir recevoir des informations mensuelles par
+                courriel
+                sur les nouvelles
+                publications et ressources disponibles.</label>
+        </div>
+        <button type="submit">commander <img src="images/icon-arrow.svg" width="20" height="20" alt="Envoyer"></button>
     </form>
 
 </body>

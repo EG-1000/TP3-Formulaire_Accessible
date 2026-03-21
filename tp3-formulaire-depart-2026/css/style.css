@@ -92,34 +92,180 @@ img {
     position: relative;
     top: 3px;
 }
+
 .icone--ok {
     background-position: 0 0;
 }
+
 .icone--avertissement {
     background-position: 49px 0;
 }
+
 .icone--erreur {
     background-position: 99px 0;
 }
-/* formulaire */
 
+/* header */
 header {
-    text-align: center;
     margin-bottom: 30px;
     font-family: 'Playfair Display', serif;
-background: linear-gradient(45deg, rgb(34,165,7), rgb(34,56,190), rgb(34,165,7));
+    background: linear-gradient(45deg, rgb(34, 165, 7), rgb(34, 56, 190), rgb(34, 165, 7));
     color: var(--couleur-tertiaire);
     padding: 20px;
-    border-radius: 8px;
+    
+    overflow: hidden;
+    justify-content: center;
+    
 }
+.brochure{
+    color:burlywood;
+    font-style: italic;
+}
+.infos-supp {
+    font-size: 0.9em;
+    color: var(--couleur-tertiaire);
+    margin-top: 10px;
+    text-align: justify;
+}
+
+.section-titre {
+    font-size: 2.5em;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* formulaire */
+.formulaire {
+    max-width: 700px;
+    margin-top: -50px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    background-color: white;
+    color: #333344;
+}
+.formulaire button[type="submit"] {
+    margin-left: auto;
+    margin-right: -50px;
+    margin-left: 200px;
+    vertical-align: bottom;
+    width: auto;
+    display: inline-flex;
+}
+.formulaire p {
+    margin-bottom: 15px;
+
+}
+
+input,
+select {
+
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.formatdelabrochure {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.formatdelabrochure button {
+
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 60px;
+    padding-right: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 2px solid lightgrey;
+
+
+}
+
+.nometprenom {
+    display: flex;
+    margin: auto;
+    justify-content: space-evenly;;
+    width: 100%;
+    gap: 10px;
+}
+.prenom {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 50%;
+}
+
+.nom {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 50%;
+}
+.legende {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: var(--couleur-secondaire);
+
+    width: 100%;
+}
+.consentement {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin:15px;
+    background-color: #ccc;
+    padding: 10px;
+
+}
+
+fieldset {
+    border: none;
+    border-top: #000000 2px solid;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+.exemple {
+    color: midnightblue;
+opacity: 0.8;
+    gap: 5px;
+    font-size: 0.7rem;
+}
+
+
 @media (max-width: 600px) {
     .formulaire {
         padding: 15px;
     }
-    .formulaire button[type="submit"] {
-margin-left: auto;
-        margin-right: -50px;
-        margin-left: 200px;
-        width: 50%;
+
+
+    .formatdelabrochure {
+        flex-direction: column;
+        align-items: center;
+    
     }
+    .formatdelabrochure button {
+        width: 100%;
+        padding: 15px;
+    }
+        .nometprenom {
+            flex-direction: column;
+            align-items: center;
+        }
+        .nom, .prenom {
+            width: 100%;
+        }
 }
