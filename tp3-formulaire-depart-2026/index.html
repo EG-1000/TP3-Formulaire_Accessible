@@ -6,23 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Commander une brochure gratuite</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
 </head>
 
-<body>
-    <!-- Votre code HTML commence ici -->
+<body>        
+    <a class="screen-reader-only focusable" href="#formulaire"> aller au formulaire </a>
+
     <header>
         <p class="infos-supp">PUBLICATION GRATUITE</p>
         <h1 class="section-titre">Commander une <span class="brochure">brochure</span> gratuite</h1>
-        <a class="screen-reader-only focusable" href="#formulaire"> aller au formulaire </a>
+
     </header>
     <form class="formulaire" id="formulaire" action="submit_form.php" method="post">
 
         <fieldset class="formatdelabrochure">
-            <legend class="legende" title><img class="legende-icone" src="images/icon-format-brochure.svg" width="30"
-                    height="30" alt="Informations de la brochure">Informations de la brochure</legend>
+            <legend class="legende"><img class="legende-icone" src="images/icon-format-brochure.svg" width="30"
+                    height="30" alt="">Informations de la brochure</legend>
             <div class="formatdelabrochure__border"></div>
             <div class="fieldset-contenu">
-                <ul class="formatdelabrochure__liste">
+                <ul class="formatdelabrochure__liste" id="format-brochure">
                     <li class="formatdelabrochure__item">
                         <input class="screen-reader-only" type="radio" id="imprimé" name="brochure"
                             value="format 1"></input>
@@ -46,53 +48,59 @@
                     </li>
 
                 </ul>
+              <div class="validation-format"> <div class="icone"></div> <p class="message-erreur_format"></p></div> 
             </div>
         </fieldset>
 
 
         <fieldset class="informations-de-contact">
             <legend class="legende" title><img class="legende-icone" src="images/icon-contact.svg" width="30"
-                    height="30" alt="Informations de contact">Informations de contact</legend>
+                    height="30" alt="">Informations de contact</legend>
             <div class="formatdelabrochure__border"></div>
             <div class="fieldset-contenu">
                 <div class="nometprenom">
                     <div class="prenom">
                         <label for="prénom" id="prénom">prénom</label>
-                        <input type="text" id="prénomtext" name="prénom" required>
+                        <input type="text" id="prénomtext" name="prénom" >
+                        <div class="validation-prenom"> <div class="icone"></div> <p class="message-erreur_prenom"></p></div>
                     </div>
                     <div class="nom">
                         <label for="nom">Nom de famille:</label>
-                        <input type="text" id="nom" name="nom" required>
+                        <input type="text" id="nom" name="nom" >
+                        <div class="validation-nom"> <div class="icone"></div> <p class="message-erreur_nom"></p></div>
                     </div>
                 </div>
-                
                 <label for="email">Adresse e-mail: <span class="exemple">(ABC123@gmail.com)</span></label>
-                <input type="email" id="email" name="email" required>
-                <label for="téléphone">Numéro de téléphone: <span class="exemple">(123-456-7890)</span></label>
-                <input type="tel" id="téléphone" name="téléphone" required>
+                <input type="email" id="email" name="email" >
+                <div class="validation-courriel"> <div class="icone"></div> <p class="message-erreur_courriel"></p></div>
+                <label for="téléphone">Numéro de téléphone: <span aria-label="Exemple de numéro de téléphone: 123 tiret 456 tiret 7890" class="exemple">(123-456-7890)</span></label>
+                <input type="tel" id="téléphone" name="téléphone">
+                    <div class="validation-telephone"> <div class="icone"></div> <p class="message-erreur_telephone"></p></div>
             </fieldset>
         </div>
         <fieldset class="informations postales">
             <legend class="legende" title><img class="legende-icone" src="images/icon-postal.svg" width="30" height="30"
-                alt="Informations postales">Informations postales</legend>
+                alt="">Informations postales</legend>
                 <div class="formatdelabrochure__border"></div>
             <div class="fieldset-contenu">
 
-                <label for="address">Adresse postale <span class="exemple">(123 Rue Exemple)</span></label>
-                <input type="text" id="address" name="address" required>
+                <label for="address" aria-label="Adresse postale">Adresse postale: <span aria-label="Exemple d'adresse postale: 123 Rue Exemple" class="exemple">(123 Rue Exemple)</span></label>
+                <input type="text" id="address" name="address">
+                <div class="validation-adresse"> <div class="icone"></div> <p class="message-erreur_adresse"></p></div>
                 <div class="pays-et-province">
                     <div class="pays">
                         <label for="pays">Pays:</label>
                         <select name="pays" id="pays" class="selection selection--pays">
-                            <option value="">--Sélectionner--</option>
+                            <option value="selectionner">--Sélectionner--</option>
                             <option value="canada">Canada</option>
                             <option value="usa">États-Unis</option>
                         </select>
+                                <div class="validation-pays"> <div class="icone"></div> <p class="message-erreur_pays"></p></div>
                     </div>
                     <div class="province">
                         <label for="province ou état">Province ou état:</label>
-                        <select name="province" class="selection selection--etatprovince">
-                            <option value="">--Sélectionner--</option>
+                        <select name="province" id="provinceetat" class="selection selection--etatprovince">
+                            <option value="selectionner">--Sélectionner--</option>
                             <optgroup label="Canada">
                                 <option value="AB">Alberta</option>
                                 <option value="BC">Colombie-Britannique</option>
@@ -129,11 +137,14 @@
                                 <option value="TN">Tennessee</option>
 
                             </optgroup>
-                        </select>
+                        </select>      
+                        <div class="validation-province"> <div class="icone"></div> <p class="message-erreur_province"></p></div>
                     </div>
                 </div>
+
                 <label for="code postal">Code postal <span class="exemple">(A1A 1A1)</span></label>
-                <input type="text" id="code postal" name="code postal" required>
+                <input type="text" id="code postal" name="code postal" >
+                <div class="validation-codepostal"> <div class="icone"></div> <p class="message-erreur_codepostal"></p></div>
             </div>
         </fieldset>
         <div class="consentement">
@@ -143,7 +154,7 @@
                 sur les nouvelles
                 publications et ressources disponibles.</label>
         </div>
-        <button class="btn_envoyer" type="submit">commander <img src="images/icon-arrow.svg" width="20" height="20"
+        <button class="btn_envoyer" id="bouton_envoyer" type="submit">commander <img src="images/icon-arrow.svg" width="20" height="20"
                 alt="Envoyer"></button>
     </form>
 

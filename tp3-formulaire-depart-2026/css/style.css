@@ -150,8 +150,8 @@ header {
 border-top: #000000 2px solid;
 }
 .btn_envoyer{
-    margin-right: 0;
-    margin-left: 0;
+    margin-right: auto;
+    margin-left: auto;
     width: auto;
     display: inline-flex;
     background-color: orangered;
@@ -175,6 +175,14 @@ select {
     border-radius: 4px;
 }
 
+input[type="text"]:focus,
+input[type="email"]:focus,  
+input[type="tel"]:focus,
+select:focus {
+  
+    outline: 4px solid blueviolet;
+    outline-offset: 4px;
+}
 .fieldset-contenu:first-child {
     display: flex;
     flex-direction: column;
@@ -203,7 +211,6 @@ justify-content: center;
 .formatdelabrochure__item {
     display: flex;
     align-items: center;
-
     justify-content: center;
 
 }
@@ -219,7 +226,7 @@ input[type="radio"]:checked + label {
      width: 100%;
      height: auto;
     border-radius: 10px;
-    padding: 10px;
+    padding:  30px 50px;
     border: 2px solid lightgrey;   
     flex-direction: column;
     align-items: center;
@@ -235,6 +242,7 @@ input[type="radio"]:focus + label {
     justify-content: space-evenly;
     width: 100%;
     gap: 10px;
+    flex-direction: column;
 }
 .prenom {
     display: flex;
@@ -345,6 +353,7 @@ display: flex;
     
     .btn_envoyer{
         vertical-align: bottom;
+        margin-left: 490px;
         width: auto;
         display: inline-flex;
         background-color: orangered;
