@@ -41,7 +41,7 @@ champTelephone.addEventListener('blur', validerTelephone);
 champpostale.addEventListener('blur', validerCodePostal);
 champAdresse.addEventListener('blur', validerAdresse);
 champPrenom.addEventListener('blur', validerPrenom);
-champNom.addEventListener('blur', validerNom);
+champNom.addEventListener('blur', validernom);
 selectPays.addEventListener('change', validerPays);
 selectProvince.addEventListener('change', validerProvince);
 formatbrochure.forEach(radio => radio.addEventListener('change', validerFormatBrochure));

@@ -58,6 +58,8 @@ Exemple pour le cas d'un seul élément :
 
 ### Accessibilité (4 points)
 
+![Texte alternatif](tp3-formulaire-depart-2026\images\contraste2.png)
+
 - [x] **Navigation au clavier** — Tab parcourt le formulaire dans le bon ordre. Enter soumet le formulaire.
 - [x] **Lien « Allez au contenu »** — Lien tout de suite après l'ouverture du `body`, permettant d'aller directement au contenu principal. Classes `screen-reader-only` et `focusable`.
 - [x] **Régions (landmarks)** — Utiliser les éléments HTML appropriés (`header`, `main`, `footer`) ou, si ce n'est pas possible, leur attribuer les rôles ARIA correspondants (`banner`, `main`, `contentinfo`).
@@ -70,7 +72,7 @@ Exemple pour le cas d'un seul élément :
 - [x] Vérifier que les champs de saisie ne sont pas vides ; afficher un message d'erreur
 - [x] Vérifier que les données sont conformes au type attendu ; afficher un message d'erreur
 
-#### Ma note d'autoévaluation pour le critère JavaScript : Z
+#### Ma note d'autoévaluation pour le critère JavaScript : 12/15
 
 ---
 

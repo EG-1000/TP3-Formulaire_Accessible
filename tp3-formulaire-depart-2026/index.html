@@ -19,7 +19,7 @@
     </header>
     <form class="formulaire" id="formulaire" action="submit_form.php" method="post">
 
-        <fieldset class="formatdelabrochure">
+        <fieldset class="formatdelabrochure" aria-label="choisir un format pour la brochure">
             <legend class="legende"><img class="legende-icone" src="images/icon-format-brochure.svg" width="30"
                     height="30" alt="">Informations de la brochure</legend>
             <div class="formatdelabrochure__border"></div>
@@ -53,7 +53,7 @@
         </fieldset>
 
 
-        <fieldset class="informations-de-contact">
+        <fieldset class="informations-de-contact" aria-label="informations de contact">
             <legend class="legende" title><img class="legende-icone" src="images/icon-contact.svg" width="30"
                     height="30" alt="">Informations de contact</legend>
             <div class="formatdelabrochure__border"></div>
@@ -61,24 +61,24 @@
                 <div class="nometprenom">
                     <div class="prenom">
                         <label for="prénom" id="prénom">prénom</label>
-                        <input type="text" id="prénomtext" name="prénom" >
+                        <input type="text" id="prénomtext" name="prénom" autocomplete="given-name">
                         <div class="validation-prenom"> <div class="icone"></div> <p class="message-erreur_prenom"></p></div>
                     </div>
                     <div class="nom">
                         <label for="nom">Nom de famille:</label>
-                        <input type="text" id="nom" name="nom" >
+                        <input type="text" id="nom" name="nom" autocomplete="family-name">
                         <div class="validation-nom"> <div class="icone"></div> <p class="message-erreur_nom"></p></div>
                     </div>
                 </div>
                 <label for="email">Adresse e-mail: <span class="exemple">(ABC123@gmail.com)</span></label>
-                <input type="email" id="email" name="email" >
+                <input type="email" id="email" name="email" autocomplete="email">
                 <div class="validation-courriel"> <div class="icone"></div> <p class="message-erreur_courriel"></p></div>
                 <label for="téléphone">Numéro de téléphone: <span aria-label="Exemple de numéro de téléphone: 123 tiret 456 tiret 7890" class="exemple">(123-456-7890)</span></label>
-                <input type="tel" id="téléphone" name="téléphone">
+                <input type="tel" id="téléphone" name="téléphone" autocomplete="tel">
                     <div class="validation-telephone"> <div class="icone"></div> <p class="message-erreur_telephone"></p></div>
             </fieldset>
         </div>
-        <fieldset class="informations postales">
+        <fieldset class="informations postales" aria-label="informations postales">
             <legend class="legende" title><img class="legende-icone" src="images/icon-postal.svg" width="30" height="30"
                 alt="">Informations postales</legend>
                 <div class="formatdelabrochure__border"></div>
